@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - Bonus
   - Back
+  - BonusSpeed
+  - BonusDeffend
   layers:
   - Default
   - TransparentFX

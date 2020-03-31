@@ -24,12 +24,14 @@ public class BonusSpawn : MonoBehaviour
 
  public   IEnumerator SpawnWave()
     {
+        float timeBetweenSpawn = Random.Range(StartValueForRandomTimeSpawn, EndValueForRandomTimeSpawn);
+        yield return new WaitForSeconds(timeBetweenSpawn);
         while (_amountBonus <= 2)
         {
             Vector3 posBullet = RandomCirclePosition();
             Instantiate(_bonusPrefab, posBullet, Quaternion.FromToRotation(Vector3.zero, transform.position));
             _amountBonus++;
-            float timeBetweenSpawn = Random.Range(StartValueForRandomTimeSpawn, EndValueForRandomTimeSpawn);
+            timeBetweenSpawn = Random.Range(StartValueForRandomTimeSpawn, EndValueForRandomTimeSpawn);
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
     }

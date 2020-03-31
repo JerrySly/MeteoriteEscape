@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C329126A-7DC9-95FB-8F49-8C5169736C89}</ProjectGuid>
+    <ProjectGuid>{B1A6C6F0-17C2-C111-358F-6421D561C61A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,7 +65,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MainScene\BackGroundBehave.cs" />
     <Compile Include="Assets\Scripts\MainScene\BonusBehave.cs" />
+    <Compile Include="Assets\Scripts\MainScene\BonusDeffender.cs" />
     <Compile Include="Assets\Scripts\MainScene\BonusSpawn.cs" />
+    <Compile Include="Assets\Scripts\MainScene\BonusSpeedDown.cs" />
     <Compile Include="Assets\Scripts\MainScene\BulletBehave.cs" />
     <Compile Include="Assets\Scripts\MainScene\ChangeScore.cs" />
     <Compile Include="Assets\Scripts\MainScene\CoreDeath.cs" />
@@ -78,8 +80,11 @@
     <Compile Include="Assets\Scripts\MainScene\MoveDefender.cs" />
     <Compile Include="Assets\Scripts\MainScene\PauseButton.cs" />
     <Compile Include="Assets\Scripts\MainScene\Spawn.cs" />
+    <Compile Include="Assets\Scripts\MainScene\SpawnBonusSpeed.cs" />
+    <Compile Include="Assets\Scripts\MainScene\SpawnDeffenderBonus.cs" />
     <Compile Include="Assets\Scripts\MainScene\TakeBonus.cs" />
     <Compile Include="Assets\Scripts\MainScene\ToMenu.cs" />
+    <Compile Include="Assets\Scripts\MenuScene\DeleteMusic.cs" />
     <Compile Include="Assets\Scripts\MenuScene\ExitGame.cs" />
     <Compile Include="Assets\Scripts\MenuScene\NextScene.cs" />
     <Compile Include="Assets\Scripts\MenuScene\StartGame.cs" />
@@ -87,37 +92,37 @@
     <Compile Include="Assets\Scripts\ToturialScript\RotationSprites.cs" />
     <None Include="Assets\UnityAds\link.xml" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Eugene/Deffender/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -291,10 +296,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Assets/UnityAds/UnityEngine.Advertisements.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Assets/UnityAds/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Monetization.Editor">
-      <HintPath>C:/Users/Eugene/Deffender/Assets/UnityAds/UnityEngine.Monetization.Editor.dll</HintPath>
+      <HintPath>C:/Users/Eugene/Deffender/MeteoriteEscape/Assets/UnityAds/UnityEngine.Monetization.Editor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

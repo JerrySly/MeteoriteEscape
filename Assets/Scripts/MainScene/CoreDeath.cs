@@ -8,9 +8,11 @@ using UnityEngine.UI;
 public class CoreDeath : MonoBehaviour
 {
     [SerializeField] private Button _restart;
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] private Spawn spawnMeteors;
-    [SerializeField] private BonusSpawn spawnBonus;
+    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private Spawn _spawnMeteors;
+    [SerializeField] private BonusSpawn _spawnBonus;
+    [SerializeField] private SpawnBonusSpeed _spawnBonusSpeed;
+    [SerializeField] private SpawnDeffenderBonus _spawnDeffenderBonus;
     public event Action DeathCore;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,9 +20,11 @@ public class CoreDeath : MonoBehaviour
         if (collision.tag == "Bullet")
         {
             _restart.gameObject.SetActive(true);
-            gameManager.StopAllCoroutines();
-            spawnMeteors.StopAllCoroutines();
-            spawnBonus.StopAllCoroutines();
+            _gameManager.StopAllCoroutines();
+            _spawnMeteors.StopAllCoroutines();
+            _spawnBonus.StopAllCoroutines();
+            _spawnBonusSpeed.StopAllCoroutines();
+            _spawnDeffenderBonus.StopAllCoroutines();
             this.gameObject.SetActive(false);
             DeathCore?.Invoke();
 
