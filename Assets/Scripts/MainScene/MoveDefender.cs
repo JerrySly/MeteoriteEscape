@@ -16,7 +16,7 @@ public class MoveDefender : MonoBehaviour
 
     private void RotatDefender()
     {
-        Vector2 mousRay = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousRay = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
         Debug.DrawRay(transform.position, mousRay);
         Debug.Log(mousRay);
         transform.rotation = Quaternion.LookRotation(transform.position, mousRay);

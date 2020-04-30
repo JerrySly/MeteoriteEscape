@@ -12,6 +12,7 @@ public class Deffend : MonoBehaviour
     private AudioSource _audio;
     [SerializeField] private AudioClip _meteorCrash;
     [SerializeField] private ParticleSystem _bulletDeath;
+    
 
     private void Start()
     {
@@ -36,16 +37,19 @@ public class Deffend : MonoBehaviour
         {
             Destroy(collision.gameObject);
             DestroyBonusHandler?.Invoke();
+            
           
         }
         if (collision.gameObject.tag == "BonusSpeed")
         {
             Destroy(collision.gameObject);
-           
+            
+
         }
         if (collision.gameObject.tag == "BonusDeffend")
         {
             Destroy(collision.gameObject);
+           
 
         }
     } 
